@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
+    <style>
+    .page{
+        background:#79778c;
+    }
+    .titleText{
+        text-align:center;
+        font-family:"Courier New", Courier, monospace;
+        font-size:64px;
+    }
+    .topBorder{
+        border-top:thin solid black;
+    }
+    .bottomBorder{
+        border-bottom:thin solid black;
+    }
+    .normalText{
+        text-align:left;
+        vertical-align: top;
+        font-family:Verdana, Geneva, sans-serif;
+        font-size:16px;
+    }
+    .containerParent{
+        text-align:center;
+    }
+    .gameContainer{
+        display:inline-block;
+        width: 960px;
+        height: 600px;
+    }
+    .subheader{
+        font-weight: bold;
+    }
+    .frame{
+        padding:5px;
+        background:#a5a1cc;
+    }
+    </style>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | GameJamOctober2</title>
+    <title>Dreams - October 2018</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>  
@@ -11,15 +48,49 @@
     <script>
       var gameInstance = UnityLoader.instantiate("gameContainer", "Build/DreamsWebVersion.json", {onProgress: UnityProgress});
     </script>
-  </head>
-  <body>
-    <div class="webgl-content">
-      <div id="gameContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">GameJamOctober2</div>
-      </div>
+    <div class="titleText">
+        Dreams
     </div>
+  </head>
+  <body class="page">
+    <table>
+      <tr height="32px">
+      <tr>
+        <td rowspan="2" class="containerParent">
+          <div class="frame">
+            <div id="gameContainer" class="gameContainer"></div>
+          </div>
+        </td>
+        <td width="20%" class="topBorder">
+          <span class="normalText">
+            Dreams was made by Colton Ramsdell and Jacob Idema for the RPI Game Development Club's October 2018 game jam.
+            <br>
+            <br>
+            View this game's <a href="https://itch.io/jam/october-jam/rate/316746">itch.io page</a>.
+          <span>
+        </td>
+      </tr>
+      <tr>
+        <td class="bottomBorder">
+          <div class="normalText">
+            <span class="subheader">
+                See Also
+            </span>
+            <br>
+            <a href="https://itch.io/jam/october-jam/rate/316848">
+              ugh<br>
+              <img src="defaultThumbnail.png">
+            </a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class=containerParent>
+          <button onclick="showhint()">Show Hint</button>
+          <span id="hintText" class="normalText"></span>
+        </td>
+        <td></td>
+    </table>
+    <script src="hintScript.js"></script>
   </body>
 </html>
